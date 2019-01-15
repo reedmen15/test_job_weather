@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <title>
+       {% block title %}
+           Test job weather
+       {% endblock %}
+    </title>
+
+</head>
+    <nav class="navbar navbar-light bg-light">
+      <span class="navbar-brand mb-2 h1">Test job</span>
+    </nav>
+<body>
+    <main>
+        <div class="container mt-5">
+            <div id="widget" >
+                <div class="widget">
+                    <form class="form-inline mb-3">
+                        <div class="container"
+                            <div>
+                                <label for="staticSearch" class="sr-only">Search weather by city</label>
+                                <input type="text" readonly class="form-control-plaintext " id="staticSearch" value="exemple city (London)">
+                            </div>
+                            <div class="form-group mx-sm-3 mb-2">
+                                <label for="inputCity" class="sr-only">City</label>
+                                <input type="city" class="form-control" id="inputCity" placeholder="input City">
+                            </div>
+                            <button type="submit" class="btn btn-primary mb-2">Search</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row"
+                {% block content %}
+                    data weather
+                {% endblock%}
+            </div>
+        </div>
+    </main>        
+</body>
+</html>
